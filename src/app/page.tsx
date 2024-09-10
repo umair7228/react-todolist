@@ -23,27 +23,26 @@ const Page = () => {
     setMainTask(copyTask);
   };
 
-  let renderTask = <h1>No Task Available</h1>;
+  // Type renderTask as either a JSX element or an array of JSX elements
+  let renderTask: JSX.Element | JSX.Element[] = <h1>No Task Available</h1>;
 
   if (mainTask.length > 0) {
-    renderTask = mainTask.map((t, i) => {
-      return (
-        <li key={i} className="flex items-center justify-between mb-5">
-          <div className="flex justify-between items-center w-2/3">
-            <h5 className="text-2xl font-semibold">{t.title}</h5>
-            <h6 className="text-lg font-medium">{t.desc}</h6>
-          </div>
-          <button
-            onClick={() => {
-              deleteHandler(i);
-            }}
-            className="bg-red-500 px-4 py-2 text-white font-bold rounded"
-          >
-            Delete
-          </button>
-        </li>
-      );
-    });
+    renderTask = mainTask.map((t, i) => (
+      <li key={i} className="flex items-center justify-between mb-5">
+        <div className="flex justify-between items-center w-2/3">
+          <h5 className="text-2xl font-semibold">{t.title}</h5>
+          <h6 className="text-lg font-medium">{t.desc}</h6>
+        </div>
+        <button
+          onClick={() => {
+            deleteHandler(i);
+          }}
+          className="bg-red-500 px-4 py-2 text-white font-bold rounded"
+        >
+          Delete
+        </button>
+      </li>
+    ));
   }
 
   return (
