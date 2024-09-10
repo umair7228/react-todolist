@@ -46,7 +46,7 @@ const Page = () => {
   }
   return (
     <>
-      <h1 className="bg-gray-800 text-white font-bold text-5xl h-20 flex items-center justify-center">Umair's Todo List</h1>
+      <h1 className="bg-gray-800 text-white font-bold text-5xl h-20 flex items-center justify-center">Umair&apos;s Todo List</h1>
       <form onSubmit={submitHandler} className="flex flex-col space-y-10 items-center justify-center my-7">
         {/* input for title */}
         <input 
