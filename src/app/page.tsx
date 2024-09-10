@@ -18,7 +18,7 @@ const Page = () => {
   }
 
   const deleteHandler = (i) => {
-    let copyTask = [...mainTask]
+    const copyTask = [...mainTask]
     copyTask.splice(i, 1)
     setmainTask(copyTask)
   }
